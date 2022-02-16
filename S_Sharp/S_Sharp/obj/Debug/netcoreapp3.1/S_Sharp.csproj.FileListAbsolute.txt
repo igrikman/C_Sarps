@@ -1,0 +1,14 @@
+E:\C_Sarp\S_Sharp\S_Sharp\bin\Debug\netcoreapp3.1\S_Sharp.exe
+E:\C_Sarp\S_Sharp\S_Sharp\bin\Debug\netcoreapp3.1\S_Sharp.deps.json
+E:\C_Sarp\S_Sharp\S_Sharp\bin\Debug\netcoreapp3.1\S_Sharp.runtimeconfig.json
+E:\C_Sarp\S_Sharp\S_Sharp\bin\Debug\netcoreapp3.1\S_Sharp.runtimeconfig.dev.json
+E:\C_Sarp\S_Sharp\S_Sharp\bin\Debug\netcoreapp3.1\S_Sharp.dll
+E:\C_Sarp\S_Sharp\S_Sharp\bin\Debug\netcoreapp3.1\S_Sharp.pdb
+E:\C_Sarp\S_Sharp\S_Sharp\obj\Debug\netcoreapp3.1\S_Sharp.csproj.AssemblyReference.cache
+E:\C_Sarp\S_Sharp\S_Sharp\obj\Debug\netcoreapp3.1\S_Sharp.GeneratedMSBuildEditorConfig.editorconfig
+E:\C_Sarp\S_Sharp\S_Sharp\obj\Debug\netcoreapp3.1\S_Sharp.AssemblyInfoInputs.cache
+E:\C_Sarp\S_Sharp\S_Sharp\obj\Debug\netcoreapp3.1\S_Sharp.AssemblyInfo.cs
+E:\C_Sarp\S_Sharp\S_Sharp\obj\Debug\netcoreapp3.1\S_Sharp.csproj.CoreCompileInputs.cache
+E:\C_Sarp\S_Sharp\S_Sharp\obj\Debug\netcoreapp3.1\S_Sharp.dll
+E:\C_Sarp\S_Sharp\S_Sharp\obj\Debug\netcoreapp3.1\S_Sharp.pdb
+E:\C_Sarp\S_Sharp\S_Sharp\obj\Debug\netcoreapp3.1\S_Sharp.genruntimeconfig.cache
