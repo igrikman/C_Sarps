@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System;
+using Program2;
 
 namespace C_Sharp
 {
@@ -279,7 +280,6 @@ namespace C_Sharp
     //End
 
     //8.Virtual & Abstract
-
     class Person
     {
         public void Work(OldWork oldWork)
@@ -354,6 +354,7 @@ namespace C_Sharp
         }
     }
     //END
+
     class Program
     {
         static void Main(string[] args)
@@ -439,7 +440,14 @@ namespace C_Sharp
                 player.ChekInfo(enemy);
                 player.Hp(enemy);
             }
-
+            //9.
+            PlayerCar playerCar = new PlayerCar();
+            Multipleyer[] multipleyers = { new Red(), new Blue() };
+            foreach(var cars in multipleyers)
+            {
+                playerCar.ShowInfo(cars);
+                playerCar.Car(cars);
+            }
         }
     }
 }
