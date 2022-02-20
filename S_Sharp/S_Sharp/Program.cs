@@ -226,8 +226,134 @@ namespace C_Sharp
         }
     }
     //END.
-    //7.
 
+    //7.Property 
+    class GS
+    {
+        private int x;
+        public int X
+        {
+            get { return x; }
+            set
+            {
+                if (value < 1)
+                {
+                    x = 1;
+                    return;
+                }
+                if (value > 10)
+                {
+                    x = 10;
+                    return;
+                }
+                x = value;
+            }
+        }
+        private int y;
+        public int Y
+        {
+            get { return y; }
+            set
+            {
+                if (value < 1)
+                {
+                    y = 1;
+                    return;
+                }
+                if (value > 10)
+                {
+                    y = 10;
+                    return;
+                }
+                y = value;
+            }
+        }
+
+        public int Z { get; set; }
+        public void Sum()
+        {
+            int result = x + y + Z;
+            Console.WriteLine($"сумма x + y + Z = {result}");
+        }
+    }
+    //End
+
+    //8.Virtual & Abstract
+
+    class Person
+    {
+        public void Work(OldWork oldWork)
+        {
+            oldWork.Profession();
+        }
+    }
+    public class OldWork
+    {
+        protected virtual void No()
+        {
+            Console.WriteLine("Но пока электрик");
+        }
+        public virtual void Profession()
+        {
+            Console.WriteLine("Я не хочу быть электриком");
+            No();
+        }
+    }
+    class NewWork : OldWork
+    {
+
+        public override void Profession()
+        {
+            Console.WriteLine("Я буду програмистом");
+            No();
+        }
+    }
+
+    public abstract class Enemy
+    {
+        public abstract int damage { get; }
+        public abstract void Punch();
+        public void ShowInfo()
+        {
+            Console.WriteLine(GetType().Name);
+        }
+    }
+    class Snork : Enemy
+    {
+        public override int damage { get { return 10; } }
+        public override void Punch()
+        {
+            Console.WriteLine($"Делает - Ааауээ и наносит {damage} урона");
+        }
+    }
+    class Krovosos : Enemy
+    {
+        public override int damage { get { return 15; } }
+        public override void Punch()
+        {
+            Console.WriteLine($"Делает - Л ьзззз и наносит {damage} урона"); 
+        }
+    }
+    class Tyshkan : Enemy
+    {
+        public override int damage { get { return 2; } }
+        public override void Punch()
+        {
+            Console.WriteLine($"Делает - Грызь и наносит {damage} урона");
+        }
+    }
+    public class Player
+    {
+        public void Hp(Enemy enemy)
+        {
+            enemy.Punch();
+        }
+        public void ChekInfo(Enemy enemy)
+        {
+            enemy.ShowInfo();
+        }
+    }
+    //END
     class Program
     {
         static void Main(string[] args)
@@ -287,8 +413,33 @@ namespace C_Sharp
             metd.number = 9;
             metd.Numb();
             metd.SumNumb();
+
             //7.
             Console.WriteLine("_");
+
+            GS gs = new GS();
+            gs.X = 4;
+            gs.Y = 6;
+            gs.Z = 10;
+            gs.Sum();
+
+            //8.
+            Console.WriteLine("_");
+
+            OldWork old = new OldWork();
+            NewWork nWork = new NewWork();
+            Person person = new Person();
+            person.Work(old);
+            person.Work(nWork);
+            Console.WriteLine("_");
+            Player player = new Player();
+            Enemy[] enemys = { new Snork(), new Krovosos(), new Tyshkan() };
+            foreach (var enemy in enemys)
+            {
+                player.ChekInfo(enemy);
+                player.Hp(enemy);
+            }
+
         }
     }
 }
