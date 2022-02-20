@@ -24,19 +24,19 @@ namespace C_Sharp
             amo = false;
         }
     }
-    //END
+    //end
 
     //2. Наследование и Полифорфизм
     public class AutoGun : Gun
     {
-       private bool amo = false;
-       private void Reloud()
+        private bool amo = false;
+        private void Reloud()
         {
             Console.WriteLine("Я пустой");
             Console.WriteLine("Перезарежаю");
             amo = true;
         }
-       public new void Sooht()
+        public new void Sooht()
         {
             for (int i = 1; i < 6; i++)
             {
@@ -46,7 +46,7 @@ namespace C_Sharp
                     continue;
                 }
                 Console.WriteLine($"{i} Выстрел");
-                
+
                 amo = false;
             }
         }
@@ -67,9 +67,9 @@ namespace C_Sharp
     }
     public class AK : MP_40
     {
-       private protected new int speed = 600;
-       protected internal new int amo = 30;
-       internal new string material = "wood & steel";
+        private protected new int speed = 600;
+        protected internal new int amo = 30;
+        internal new string material = "wood & steel";
         public void Shoot_AK()
         {
             int sh_sec = speed / amo;
@@ -82,18 +82,18 @@ namespace C_Sharp
     public class Cikle
     {
         protected string[] mas = { "l", "u", "c", "k" };
-        private int j = 1;
+        private readonly int j = 1;
         private int k = 3;
         private int m = 5;
-        public void aFor()
+        public void Afor()
         {
             for (int i = j; i < 5; i++)
             {
                 Console.WriteLine($"for {i}");
             }
-            aDoWhile();
+            AdoWhile();
         }
-        public void aDoWhile()
+        public void AdoWhile()
         {
             do
             {
@@ -101,19 +101,19 @@ namespace C_Sharp
                 k--;
             }
             while (k > 0);
-            aWhile();
+            Awhile();
         }
-        public void aWhile()
+        public void Awhile()
         {
             while (m == 5)
             {
                 Console.WriteLine($"While {m}");
                 m--;
             }
-            aForeach();
+            Aforeach();
 
         }
-        public void aForeach()
+        public void Aforeach()
         {
             foreach (string s in mas)
             {
@@ -127,7 +127,7 @@ namespace C_Sharp
     //4.1Enumerable
     class Week : IEnumerable
     {
-        string[] days = { "Monday", "Tuesday", "Wednesday", "Thursday",
+        private readonly string[] days = { "Monday", "Tuesday", "Wednesday", "Thursday",
                          "Friday", "Saturday", "Sunday" };
         public IEnumerator GetEnumerator() => days.GetEnumerator();
     }
@@ -136,17 +136,17 @@ namespace C_Sharp
     //5.Operator
     class Operator
     {
-        public int a =45 ;
-        private int b = 45;
-        private int c = -45;
+        public int a = 45;
+        private readonly int b = 45;
+        private readonly int c = -45;
         public void Oper()
         {
-            if(a<50)
+            if (a < 50)
             {
                 int z = a + b;
                 Console.WriteLine(z);
             }
-            else if (a<-1)
+            else if (a < -1)
             {
                 int z = a + c;
                 Console.WriteLine(z);
@@ -171,6 +171,63 @@ namespace C_Sharp
 
     }
     //END
+
+    //6.METOD
+    class Metod
+    {
+        public void Message(string message = "No message")
+        {
+            Console.WriteLine(message);
+
+            string messag = GetMessage();
+            Console.WriteLine(messag);
+        }
+        public void Sum(int a, int b)
+        {
+            int res = a + b;
+            Console.WriteLine($"{a}+{b}={res}");
+            int num = GetNumber();
+            Console.WriteLine($"Call me now {num}");
+        }
+        public void Person(string name, int age, string work = "undefined")
+        {
+            Console.WriteLine($"Name = {name}; Age = {age};Work = {work};");
+        }
+        public string GetMessage()
+        {
+            return "Bay";
+        }
+        public int GetNumber()
+        {
+            return 445827429;
+        }
+
+        public int number = 5;
+        public void Numb()
+        {
+            void Nb(ref int n)
+            {
+                n++;
+                Console.WriteLine($"Число {n}");
+            }
+            Nb(ref number);
+
+        }
+        public void SumNumb()
+        {
+            void Sim(int x, int y, out int result)
+            {
+                result = x + y;
+
+            }
+            int n;
+            Sim(1, 2, out n);
+            Console.WriteLine($"число {n}");
+        }
+    }
+    //END.
+    //7.
+
     class Program
     {
         static void Main(string[] args)
@@ -202,9 +259,9 @@ namespace C_Sharp
             Console.WriteLine("_");
 
             Cikle cikle = new Cikle();
-            cikle.aFor();
+            cikle.Afor();
             Week week = new Week();
-            foreach(var day in week)
+            foreach (var day in week)
             {
                 Console.WriteLine(day);
             }
@@ -219,6 +276,19 @@ namespace C_Sharp
             oper.a = 100;
             oper.Oper();
 
+            //6.
+            Console.WriteLine("_");
+
+            Metod metd = new Metod();
+            metd.Message("Hello");
+            metd.Sum(25, 25);
+            metd.Person("Igor", 23);
+            metd.Numb();
+            metd.number = 9;
+            metd.Numb();
+            metd.SumNumb();
+            //7.
+            Console.WriteLine("_");
         }
     }
 }
