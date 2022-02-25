@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System;
 using Program2;
+using S_Sharp;
 
 namespace C_Sharp
 {
@@ -441,6 +442,7 @@ namespace C_Sharp
                 player.Hp(enemy);
             }
             //9.
+            Console.WriteLine("_");
             PlayerCar playerCar = new PlayerCar();
             Multipleyer[] multipleyers = { new Red(), new Blue() };
             foreach(var cars in multipleyers)
@@ -448,6 +450,32 @@ namespace C_Sharp
                 playerCar.ShowInfo(cars);
                 playerCar.Car(cars);
             }
+
+            //10.
+            Console.WriteLine("_");
+
+            IDataProcessor data = new ConsoleDataProcessor();
+            data.ProcessorData(new DbDataProvider());
+            data.ProcessorData(new FileDataProvider());
+            data.ProcessorData(new APIDataProvider());
+
+            Console.WriteLine("_");
+
+            IBelarus Agressor = new Krim();
+            Agressor.Ychenia(new Chaes());
+            Agressor.Ychenia(new Kiev());
+            Agressor.Ychenia(new Belarus());
+
+            Console.WriteLine("_");
+
+            Driver driver = new Driver();
+            Car[] carsing = { new Niva(), new BMW() };
+            foreach ( var car in carsing)
+            {
+                driver.ChekInfo(car);
+                driver.Drive(car); ;
+            }
+            Console.WriteLine("_");
         }
     }
 }
